@@ -99,6 +99,20 @@
             "value": "16",
             "varName": "slide_speed",
             "varType": 0
+        },
+        {
+            "id": "8fde534e-56dd-4a72-a1f4-bc96a4aa7058",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "on_goal",
+            "varType": 3
         }
     ],
     "solid": true,
