@@ -50,6 +50,7 @@ if (em_key_enter) {
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		else if(em_position < global.num_levels) room_goto(em_position+2);
 	}
+	//pause menu
 	else if(em_title == "Paused"){
 		if(actual_string == cur + "Resume"){
 			instance_destroy(pause_menu);
