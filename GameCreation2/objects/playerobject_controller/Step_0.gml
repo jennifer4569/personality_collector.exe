@@ -1,6 +1,18 @@
 
 /// @description Insert description here
 // You can write your code in this editor
+if(keyboard_check_released(vk_escape)){
+	if(!in_pause){
+		instance_create_depth(0,0,-10,pause_menu);
+		in_pause = true;
+	}
+	else{
+		instance_destroy(pause_menu);
+		in_pause = false;	
+	}
+}
+if(in_pause)
+return;
 
 if(!playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
 	playerobject_virtue.movement_direction_x = 0;

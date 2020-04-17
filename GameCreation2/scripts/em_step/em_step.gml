@@ -40,13 +40,23 @@ if (em_key_enter) {
 	show_debug_message(actual_string);
 	
 	//main menu stuff
-	if(actual_string == cur + "Play") room_goto(2);
-	else if(actual_string == cur + "Level Select") room_goto(1);
-	else if(actual_string == cur + "Exit") game_end();
+	if(em_title == "Main Menu"){
+		if(actual_string == cur + "Play") room_goto(2);
+		else if(actual_string == cur + "Level Select") room_goto(1);
+		else if(actual_string == cur + "Exit") game_end();
+	}
 	//level select stuff
-	else{
+	else if(em_title == "Level Select"){
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		else if(em_position < global.num_levels) room_goto(em_position+2);
+	}
+	else if(em_title == "Paused"){
+		if(actual_string == cur + "Resume"){
+			instance_destroy(pause_menu);
+			playerobject_controller.in_pause = false;
+		}
+		if(actual_string == cur + "Restart") room_restart();
+		if(actual_string == cur + "Exit") game_end();
 	}
 }
 

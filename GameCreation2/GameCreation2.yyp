@@ -63,6 +63,22 @@
             }
         },
         {
+            "Key": "1fbb98da-47ba-4f60-9c49-57f0272738a6",
+            "Value": {
+                "id": "eecda84e-447f-46ec-9d91-46252efb6952",
+                "resourcePath": "objects\\obstacleobj\\obstacleobj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "24c00ffa-0716-48a6-8876-d81361305552",
+            "Value": {
+                "id": "972c7f0a-1ba8-4d0d-8338-841e26fc0cdf",
+                "resourcePath": "sprites\\obstacle\\obstacle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "28b52315-960f-4b02-bd9b-fa00194fd7d2",
             "Value": {
                 "id": "3cd25115-da7e-42cc-9b0e-e8e34ca059ed",
@@ -156,6 +172,14 @@
                 "id": "4a35a6ad-a474-459a-bfae-2aaf217626ba",
                 "resourcePath": "views\\55631387-aa5c-42db-9f16-1dfecfdc9279.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "56b00cce-acf2-487c-982b-5b2c6444a8fc",
+            "Value": {
+                "id": "2c1cf67a-9370-456b-8a0b-98bfec0ac087",
+                "resourcePath": "objects\\pause_menu\\pause_menu.yy",
+                "resourceType": "GMObject"
             }
         },
         {
