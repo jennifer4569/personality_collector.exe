@@ -5,16 +5,6 @@
     "name": "goalobject_sin",
     "eventList": [
         {
-            "id": "b4437557-efff-4128-8938-5959470ee9ba",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "5a48ae7b-4605-4b45-9c22-8373a992d1d5",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "a13586b1-cefa-4690-a9cb-40a953ef5073"
-        },
-        {
             "id": "7f8b63c9-d8a7-43c0-944a-92c3d6fb9ffc",
             "modelName": "GMEvent",
             "mvc": "1.0",

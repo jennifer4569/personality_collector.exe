@@ -66,15 +66,17 @@ with (playerobject_virtue){
 		is_sliding = false;
 	if(place_meeting(x,y,playerobject_sin))
 		is_sliding = false;		
-	if(place_meeting(x,y,goalobject_sin))
+	/*if(place_meeting(x,y,goalobject_sin))
 		is_sliding = false;
-		
+	*/	
 	//this checks if it is completely overlapping (that way, the player cannot just slide past the goal)
 	if(instance_place(x+32,y+32,goalobject_virtue) &&
 	instance_place(x+32,y-32,goalobject_virtue) &&
 	instance_place(x-32,y+32,goalobject_virtue) &&
 	instance_place(x-32,y-32,goalobject_virtue))
 		on_goal = true;
+	else
+		on_goal = false;
 }
 with (playerobject_sin){
 	x += movement_direction_x;
@@ -87,17 +89,24 @@ with (playerobject_sin){
 		is_sliding = false;
 	if(place_meeting(x,y,playerobject_virtue))
 		is_sliding = false;
-	if(place_meeting(x,y,goalobject_virtue))
+	/*if(place_meeting(x,y,goalobject_virtue))
 		is_sliding = false;
-		
+	*/
+	
 	//this checks if it is completely overlapping (that way, the player cannot just slide past the goal)
 	if(instance_place(x+32,y+32,goalobject_sin) &&
 	instance_place(x+32,y-32,goalobject_sin) &&
 	instance_place(x-32,y+32,goalobject_sin) &&
 	instance_place(x-32,y-32,goalobject_sin))
 		on_goal = true;
+	else
+		on_goal = false;
 }
 
-if(playerobject_virtue.on_goal && playerobject_sin.on_goal){
-	room_goto_next();
+if(playerobject_virtue.on_goal && playerobject_sin.on_goal && 
+!playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
+	if(room_next(room))
+		room_goto_next();
+	else
+		room_goto(room_first);
 }

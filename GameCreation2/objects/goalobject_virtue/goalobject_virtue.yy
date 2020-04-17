@@ -5,16 +5,6 @@
     "name": "goalobject_virtue",
     "eventList": [
         {
-            "id": "46cd2b87-291a-4fd8-a284-2cd7ec6f62e7",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "4640cc8b-da8f-4841-99e8-7d5697ae2879",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "5f2d6011-d8b9-4e03-9fb0-4331d2b82f67"
-        },
-        {
             "id": "5ba6f4af-cc67-4e0a-a98c-280fba72e5df",
             "modelName": "GMEvent",
             "mvc": "1.0",
