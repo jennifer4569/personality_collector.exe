@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "17fe1f23-3030-4553-adce-389ce1c62c2a",
+            "Value": {
+                "id": "3ecd2570-daff-49b9-9d73-d52fae8cea75",
+                "resourcePath": "sprites\\tileset\\tileset.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1a2ceb72-e294-49ed-a258-ce143665f2cb",
             "Value": {
                 "id": "06c8992f-0c4f-4237-a44b-264de9712b66",
@@ -132,6 +140,14 @@
                 "id": "fb9cff71-75f0-4d12-a480-b0c06ffc3dd4",
                 "resourcePath": "sprites\\wallsprite_middle\\wallsprite_middle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3979b9d6-e629-4ad6-9d35-3f6068e2f91b",
+            "Value": {
+                "id": "f1eb0c9e-4c58-4e96-a148-b9a0d479366a",
+                "resourcePath": "views\\3979b9d6-e629-4ad6-9d35-3f6068e2f91b.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -351,6 +367,14 @@
             }
         },
         {
+            "Key": "84e765ca-e63e-45cf-a1a4-291cbf727e96",
+            "Value": {
+                "id": "99f98164-f2cb-44ee-b6dd-8d767dd8773b",
+                "resourcePath": "tilesets\\tileset0\\tileset0.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "8a0556b9-6e7e-4c16-bce7-261a0cb24932",
             "Value": {
                 "id": "3ad56029-4bba-4efc-96fc-ace892d90531",
@@ -436,6 +460,14 @@
                 "id": "9743e4e4-f7fd-4d7d-8a74-3ac9011bb70d",
                 "resourcePath": "objects\\wallobject_topleft\\wallobject_topleft.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a312a3ce-aadb-42d2-943c-1056fb8ffce9",
+            "Value": {
+                "id": "9e830649-799c-4d55-a530-675e1fe2240a",
+                "resourcePath": "views\\a312a3ce-aadb-42d2-943c-1056fb8ffce9.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -652,6 +684,14 @@
                 "id": "59f72972-146a-4cca-8e37-17be4d73037c",
                 "resourcePath": "objects\\wallobject_bottomrightcorner\\wallobject_bottomrightcorner.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ed3c46e7-fd5d-4772-8398-0f2b95d3f2af",
+            "Value": {
+                "id": "97f6d205-f7ad-4dba-a97d-03be6a21d502",
+                "resourcePath": "views\\ed3c46e7-fd5d-4772-8398-0f2b95d3f2af.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
