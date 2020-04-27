@@ -15,41 +15,51 @@ if(in_pause)
 return;
 
 if(!playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
-	playerobject_virtue.movement_direction_x = 0;
-	playerobject_virtue.movement_direction_y = 0;
-	playerobject_sin.movement_direction_x = 0;
-	playerobject_sin.movement_direction_y = 0;
-	if(keyboard_check(vk_down)){
-		playerobject_virtue.image_angle = 0;
-		playerobject_virtue.movement_direction_y = playerobject_virtue.slide_speed;
-		playerobject_virtue.is_sliding = true;
-		playerobject_sin.image_angle = 0;
-		playerobject_sin.movement_direction_y = playerobject_sin.slide_speed;
-		playerobject_sin.is_sliding = true;
+	with(playerobject_virtue){
+		movement_direction_x = 0;
+		movement_direction_y = 0;
+		if(keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up))
+			is_sliding = true;
+			
+		if(keyboard_check(vk_right)){
+			movement_direction_x = slide_speed;
+			sprite_index = virtue_roll_right;
+		}
+		else if(keyboard_check(vk_up)){
+			movement_direction_y = -slide_speed;
+			sprite_index = virtue_roll_up;
+		}
+		else if(keyboard_check(vk_left)){
+			movement_direction_x = -slide_speed;
+			sprite_index = virtue_roll_left;
+		}
+		else if(keyboard_check(vk_down)){
+			movement_direction_y = slide_speed;
+			sprite_index = virtue_roll_down;
+		}
 	}
-	if(keyboard_check(vk_right)){
-		playerobject_virtue.image_angle = 90;
-		playerobject_virtue.movement_direction_x = playerobject_virtue.slide_speed;
-		playerobject_virtue.is_sliding = true;
-		playerobject_sin.image_angle = 270;
-		playerobject_sin.movement_direction_x = -playerobject_sin.slide_speed;
-		playerobject_sin.is_sliding = true;
-	}
-	if(keyboard_check(vk_up)){
-		playerobject_virtue.image_angle = 180;
-		playerobject_virtue.movement_direction_y = -playerobject_virtue.slide_speed;
-		playerobject_virtue.is_sliding = true;
-		playerobject_sin.image_angle = 180;
-		playerobject_sin.movement_direction_y = -playerobject_sin.slide_speed;
-		playerobject_sin.is_sliding = true;
-	}
-	if(keyboard_check(vk_left)){
-		playerobject_virtue.image_angle = 270;
-		playerobject_virtue.movement_direction_x = -playerobject_virtue.slide_speed;
-		playerobject_virtue.is_sliding = true;
-		playerobject_sin.image_angle = 90;
-		playerobject_sin.movement_direction_x = playerobject_sin.slide_speed;
-		playerobject_sin.is_sliding = true;
+	with(playerobject_sin){
+		movement_direction_x = 0;
+		movement_direction_y = 0;
+		if(keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up))
+			is_sliding = true;
+			
+		if(keyboard_check(vk_left)){
+			movement_direction_x = slide_speed;
+			sprite_index = sin_roll_right;
+		}
+		else if(keyboard_check(vk_up)){
+			movement_direction_y = -slide_speed;
+			sprite_index = sin_roll_up;
+		}
+		else if(keyboard_check(vk_right)){
+			movement_direction_x = -slide_speed;
+			sprite_index = sin_roll_left;
+		}
+		else if(keyboard_check(vk_down)){
+			movement_direction_y = slide_speed;
+			sprite_index = sin_roll_down;
+		}
 	}
 }
 else{
@@ -70,17 +80,6 @@ else{
 with (playerobject_virtue){
 	x += movement_direction_x;
 	y += movement_direction_y;
-	if(place_meeting(x,y,wallobject))
-		is_sliding = false;	
-	if(place_meeting(x,y,breakablewall_virtueobj))
-		is_sliding = false;
-	if(place_meeting(x,y,breakablewall_sinobj))
-		is_sliding = false;
-	if(place_meeting(x,y,playerobject_sin))
-		is_sliding = false;		
-	/*if(place_meeting(x,y,goalobject_sin))
-		is_sliding = false;
-	*/	
 	//this checks if it is completely overlapping (that way, the player cannot just slide past the goal)
 	if(instance_place(x+32,y+32,goalobject_virtue) &&
 	instance_place(x+32,y-32,goalobject_virtue) &&
@@ -93,17 +92,6 @@ with (playerobject_virtue){
 with (playerobject_sin){
 	x += movement_direction_x;
 	y += movement_direction_y;
-	if(place_meeting(x,y,wallobject))
-		is_sliding = false;	
-	if(place_meeting(x,y,breakablewall_virtueobj))
-		is_sliding = false;
-	if(place_meeting(x,y,breakablewall_sinobj))
-		is_sliding = false;
-	if(place_meeting(x,y,playerobject_virtue))
-		is_sliding = false;
-	/*if(place_meeting(x,y,goalobject_virtue))
-		is_sliding = false;
-	*/
 	
 	//this checks if it is completely overlapping (that way, the player cannot just slide past the goal)
 	if(instance_place(x+32,y+32,goalobject_sin) &&
