@@ -4,7 +4,10 @@
 draw_sprite(textbox,0,x,y);
 draw_set_font(font0);
 if(is_win){
-	draw_text(x,y-30,"Success! Initiating next level...");
+	if(room_next(room))
+		draw_text(x,y-30,"Success! Initiating next level...");
+	else
+		draw_text(x,y-30,"Success! Acquired all material!");
 	draw_text(x,y,round(countdown));
 }
 if(is_lose){
