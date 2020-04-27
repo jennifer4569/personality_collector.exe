@@ -17,51 +17,52 @@ if(in_pause)
 	return;
 
 if(!playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
-	with(playerobject_virtue){
-		movement_direction_x = 0;
-		movement_direction_y = 0;
-		if(keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up))
+	if(keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up)){
+		with(playerobject_virtue){
+			movement_direction_x = 0;
+			movement_direction_y = 0;
 			is_sliding = true;
 			
-		if(keyboard_check(vk_right)){
-			movement_direction_x = slide_speed;
-			sprite_index = virtue_roll_right;
+			if(keyboard_check(vk_right)){
+				movement_direction_x = slide_speed;
+				sprite_index = virtue_roll_right;
+			}
+			else if(keyboard_check(vk_up)){
+				movement_direction_y = -slide_speed;
+				sprite_index = virtue_roll_up;
+			}
+			else if(keyboard_check(vk_left)){
+				movement_direction_x = -slide_speed;
+				sprite_index = virtue_roll_left;
+			}
+			else if(keyboard_check(vk_down)){
+				movement_direction_y = slide_speed;
+				sprite_index = virtue_roll_down;
+			}
 		}
-		else if(keyboard_check(vk_up)){
-			movement_direction_y = -slide_speed;
-			sprite_index = virtue_roll_up;
-		}
-		else if(keyboard_check(vk_left)){
-			movement_direction_x = -slide_speed;
-			sprite_index = virtue_roll_left;
-		}
-		else if(keyboard_check(vk_down)){
-			movement_direction_y = slide_speed;
-			sprite_index = virtue_roll_down;
-		}
-	}
-	with(playerobject_sin){
-		movement_direction_x = 0;
-		movement_direction_y = 0;
-		if(keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up))
+		with(playerobject_sin){
+			movement_direction_x = 0;
+			movement_direction_y = 0;
 			is_sliding = true;
 			
-		if(keyboard_check(vk_left)){
-			movement_direction_x = slide_speed;
-			sprite_index = sin_roll_right;
+			if(keyboard_check(vk_left)){
+				movement_direction_x = slide_speed;
+				sprite_index = sin_roll_right;
+			}
+			else if(keyboard_check(vk_up)){
+				movement_direction_y = -slide_speed;
+				sprite_index = sin_roll_up;
+			}
+			else if(keyboard_check(vk_right)){
+				movement_direction_x = -slide_speed;
+				sprite_index = sin_roll_left;
+			}
+			else if(keyboard_check(vk_down)){
+				movement_direction_y = slide_speed;
+				sprite_index = sin_roll_down;
+			}
 		}
-		else if(keyboard_check(vk_up)){
-			movement_direction_y = -slide_speed;
-			sprite_index = sin_roll_up;
-		}
-		else if(keyboard_check(vk_right)){
-			movement_direction_x = -slide_speed;
-			sprite_index = sin_roll_left;
-		}
-		else if(keyboard_check(vk_down)){
-			movement_direction_y = slide_speed;
-			sprite_index = sin_roll_down;
-		}
+		return;
 	}
 }
 else{
@@ -78,7 +79,6 @@ else{
 		}
 	}	
 }
-
 with (playerobject_virtue){
 	x += movement_direction_x;
 	y += movement_direction_y;
@@ -94,7 +94,7 @@ with (playerobject_virtue){
 with (playerobject_sin){
 	x += movement_direction_x;
 	y += movement_direction_y;
-	
+
 	//this checks if it is completely overlapping (that way, the player cannot just slide past the goal)
 	if(instance_place(x+32,y+32,goalobject_sin) &&
 	instance_place(x+32,y-32,goalobject_sin) &&
