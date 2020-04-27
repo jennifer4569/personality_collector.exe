@@ -6,6 +6,7 @@
 * None - this script doesn't require any arguments.
 */
 
+draw_sprite(menubox,0,view_xview + view_wview * 0.5,view_yview + view_hview * 0.5);
 //Initialize the halign and the valign
 draw_set_halign(em_halign);
 draw_set_valign(em_valign);

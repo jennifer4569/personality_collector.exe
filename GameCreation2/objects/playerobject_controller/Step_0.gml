@@ -1,6 +1,8 @@
-
 /// @description Insert description here
 // You can write your code in this editor
+if(won || lost)
+	return;
+
 if(keyboard_check_released(vk_escape)){
 	if(!in_pause){
 		instance_create_depth(0,0,-10,pause_menu);
@@ -12,7 +14,7 @@ if(keyboard_check_released(vk_escape)){
 	}
 }
 if(in_pause)
-return;
+	return;
 
 if(!playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
 	with(playerobject_virtue){
@@ -103,10 +105,10 @@ with (playerobject_sin){
 		on_goal = false;
 }
 
+//win condition
 if(playerobject_virtue.on_goal && playerobject_sin.on_goal && 
 !playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
-	if(room_next(room))
-		room_goto_next();
-	else
-		room_goto(room_first);
+	instance_create_depth(x,y,-10,countdown_timer);
+	won = true;
+	countdown_timer.is_win = true;
 }
