@@ -48,7 +48,19 @@ if (em_key_enter) {
 	//level select stuff
 	else if(em_title == "Level Select"){
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
-		else if(em_position < global.num_levels) room_goto(em_position+2);
+		else if(actual_string == cur + "Previous Page"){
+			global.start_lvl -= global.lvls_inpage;
+			em_destroy();
+			init_lvl_select();
+		}
+		else if(actual_string == cur + "Next Page"){
+			global.start_lvl += global.lvls_inpage;
+			em_destroy();
+			init_lvl_select();
+		}
+		else{
+			if(global.start_lvl + em_position < global.num_levels) room_goto(global.start_lvl+em_position+2);
+		}
 	}
 	//pause menu
 	else if(em_title == "Paused"){
@@ -57,7 +69,9 @@ if (em_key_enter) {
 			playerobject_controller.in_pause = false;
 		}
 		if(actual_string == cur + "Restart") room_restart();
+		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		if(actual_string == cur + "Exit") game_end();
+		
 	}
 }
 

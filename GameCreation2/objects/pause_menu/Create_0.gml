@@ -5,7 +5,7 @@ while(room_exists(global.num_levels+2)){
 }
 
 em_init(
-    3,
+    4,
     0,
     32,
     ">",
@@ -25,5 +25,5 @@ em_init(
 
 em_add_section("Resume",0);
 em_add_section("Restart",0);
+em_add_section("Back to Main Menu",0);
 em_add_section("Exit",0);
-
