@@ -1,10 +1,13 @@
-num_elements = global.start_lvl+global.lvls_inpage;
-if(num_elements > global.num_levels){
-	num_elements = global.num_levels;
+num_elements = global.lvls_inpage;
+
+//if last page
+if(global.start_lvl+global.lvls_inpage > global.num_levels){
+	num_elements = global.num_levels - global.start_lvl + 1;
 }
 else
 	num_elements++;
 
+//if first page
 if(global.start_lvl != 0)
 	num_elements++;
 	
@@ -29,7 +32,7 @@ em_init(
     0
 );
 
-for(i = global.start_lvl; i < global.start_lvl+global.lvls_inpage; i++){
+for(i = global.start_lvl; i < global.start_lvl+global.lvls_inpage && i <= global.num_levels; i++){
 	em_add_section(room_get_name(i+2),0);
 }
 

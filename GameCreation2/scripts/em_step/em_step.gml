@@ -62,7 +62,8 @@ if (em_key_enter) {
 			init_lvl_select();
 		}
 		else{
-			if(global.start_lvl + em_position < global.num_levels) room_goto(global.start_lvl+em_position+2);
+			if(global.start_lvl + em_position <= global.num_levels) 
+				room_goto(global.start_lvl+em_position+2);
 		}
 		audio_play_sound(menu,0,false)
 	}
