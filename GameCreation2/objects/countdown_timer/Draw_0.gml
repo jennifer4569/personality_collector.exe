@@ -9,8 +9,9 @@ if(is_win){
 		audio_play_sound(win,5,false);
 	}
 	sound = false;
+	var rname = room_get_name(room);
 	if(room_next(room))
-		var rname = room_get_name(room);
+		
 		if (rname == "Level1") draw_text(x,y-30,"[Processing...Courageousness\n data recovered. Progress: 5%. ]");
 		else if (rname == "Level2") draw_text(x,y-30,"[Processing...Data\n Honesty recovered. Progress: 9%]");
 		else if (rname == "Level3") draw_text(x,y-30,"[Processing... Respect \nrecovered. Progress: 14%. \nData loss reason: Unknown] ");
