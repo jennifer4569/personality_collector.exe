@@ -10,7 +10,7 @@ if(is_win){
 	}
 	sound = false;
 	var rname = room_get_name(room);
-	if(room_next(room))
+	if(room_next(room)){
 		
 		if (rname == "Level1") draw_text(x,y-30,"[Processing...Courageousness\n data recovered. Progress: 5%. ]");
 		else if (rname == "Level2") draw_text(x,y-30,"[Processing...Data\n Honesty recovered. Progress: 9%]");
@@ -34,8 +34,8 @@ if(is_win){
 		else if (rname == "Level20") draw_text(x,y-30,"Success!...Got Reliability\n back. I can’t wait to be back\n to myself! Two more to go! ");
 		else if (rname == "Level21") draw_text(x,y-30,"So close! Got Consideration.\n Oh it feels so nice to feel again,\n but just one thing feels missing.");
 		else if (rname == "Level22") draw_text(x,y-30,"Success! Initiating next level...");
-	else
-		draw_text(x,y-30,"Woohoo! I’ve finally found it!\n The last one! “Love”.\n I can’t wait to wake up and get back \nto my old life with my owner and friends.\n Rebooting! ");
+	}else
+		draw_text(x,y-30,"Woohoo! Finally found it!\n The last one! Love.\n I cannot wait to wake up and get back \nto my old life.\n Rebooting! ");
 	draw_text(x,y-90,round(countdown));
 	//draw_text(x,y+90,"Press any key to continue...");
 }
