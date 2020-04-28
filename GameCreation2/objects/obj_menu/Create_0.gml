@@ -14,7 +14,7 @@ em_init(
     fa_center,
     fa_top,
     c_white,
-    "Main Menu",
+    "personality_\ncollector.exe",
     100,
     0,
     0,
