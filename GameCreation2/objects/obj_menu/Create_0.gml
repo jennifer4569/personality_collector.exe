@@ -22,6 +22,9 @@ em_init(
     2,
     0
 );
+if !audio_is_playing(music){
+	audio_play_sound(music, 5, true);
+}
 
 em_add_section("Play",0);
 em_add_section("Level Select",0);

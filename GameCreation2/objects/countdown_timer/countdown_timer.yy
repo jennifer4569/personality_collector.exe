@@ -62,7 +62,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "3.48",
+            "value": "3.9",
             "varName": "countdown",
             "varType": 0
         },
@@ -92,6 +92,20 @@
             "resourceFilter": 1023,
             "value": "0",
             "varName": "is_lose",
+            "varType": 3
+        },
+        {
+            "id": "125d7614-db7e-4bdd-8609-2762cc932c91",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "sound",
             "varType": 3
         }
     ],

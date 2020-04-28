@@ -5,7 +5,7 @@ if(place_meeting(x,y,all)){
 return 0;
 /// @description Insert description here
 // You can write your code in this editor
-hit_timer -= 1;
+
 if(!is_sliding){
 	movement_direction_x = 0;
 	movement_direction_y = 0;
