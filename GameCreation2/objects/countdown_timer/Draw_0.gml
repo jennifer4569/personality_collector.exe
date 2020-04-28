@@ -1,6 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
-//if(win_countdown != 0)
+if(!global.is_normal_mode){
+	if(is_win){
+		if (!audio_is_playing(win) && sound){
+			audio_play_sound(win,5,false);
+		}
+		sound = false;
+		return;
+	}
+	if(is_lose){
+		if (!audio_is_playing(die) && sound){
+			audio_play_sound(die,5,false);
+		}
+		sound = false;	
+		return;
+	}
+}
 draw_sprite_ext(menubox,0,x,y,1.5,0.5,0,c_white,1);
 image_yscale = 0.5;
 draw_set_font(font0);

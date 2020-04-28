@@ -84,5 +84,6 @@ if(playerobject_virtue.on_goal && playerobject_sin.on_goal &&
 			ini_write_real("data", "speedrun_highscore" + room_get_name(room), HUD.secs);
 			ini_close();
 		}
+		countdown_timer.countdown = 1;
 	}	
 }
