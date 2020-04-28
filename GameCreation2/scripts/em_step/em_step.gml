@@ -24,6 +24,7 @@ if (em_key_up) { //Go up
     if (em_position==0) em_position = em_max_position-1;
     else em_position--;
     if (em_sound!=0) audio_play_sound(em_sound,10,0);
+	audio_play_sound(menu,0,false)
 }
 
 if (em_key_down) { //Go down
@@ -32,6 +33,7 @@ if (em_key_down) { //Go down
     if (em_position>=em_max_position-1) em_position = 0;
     else em_position++;
     if (em_sound!=0) audio_play_sound(em_sound,10,0);
+	audio_play_sound(menu,0,false)
 }
 
 //Execute the right script when a button is activated
@@ -44,6 +46,7 @@ if (em_key_enter) {
 		if(actual_string == cur + "Play") room_goto(2);
 		else if(actual_string == cur + "Level Select") room_goto(1);
 		else if(actual_string == cur + "Exit") game_end();
+		audio_play_sound(menu,0,false)
 	}
 	//level select stuff
 	else if(em_title == "Level Select"){
@@ -61,6 +64,7 @@ if (em_key_enter) {
 		else{
 			if(global.start_lvl + em_position < global.num_levels) room_goto(global.start_lvl+em_position+2);
 		}
+		audio_play_sound(menu,0,false)
 	}
 	//pause menu
 	else if(em_title == "Paused"){
@@ -71,7 +75,7 @@ if (em_key_enter) {
 		if(actual_string == cur + "Restart") room_restart();
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		if(actual_string == cur + "Exit") game_end();
-		
+		audio_play_sound(menu,0,false)
 	}
 }
 
