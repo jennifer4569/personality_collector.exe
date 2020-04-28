@@ -1,83 +1,43 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(won || lost)
+if(won || lost || in_pause)
 	return;
 
-if(keyboard_check_released(vk_escape)){
-	if(!in_pause){
-		instance_create_depth(0,0,-10,pause_menu);
-		in_pause = true;
-	}
-	else{
-		instance_destroy(pause_menu);
-		in_pause = false;	
-	}
-}
-if(in_pause)
-	return;
+/*
+if(check_player_collision(playerobject_sin)) || check_player_collision(playerobject_virtue)){
+	set_idle(playerobject_virtue);
+	set_idle(playerobject_sin);
+}*/
+if(check_player_collision(playerobject_sin))
+	set_idle(playerobject_sin);
+	
+if(check_player_collision(playerobject_virtue))
+	set_idle(playerobject_virtue);
 
-if(!playerobject_virtue.is_sliding && !playerobject_sin.is_sliding){
-	if(keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up)){
-		with(playerobject_virtue){
-			movement_direction_x = 0;
-			movement_direction_y = 0;
-			is_sliding = true;
-			
-			if(keyboard_check(vk_right)){
-				movement_direction_x = slide_speed;
-				sprite_index = virtue_roll_right;
-			}
-			else if(keyboard_check(vk_up)){
-				movement_direction_y = -slide_speed;
-				sprite_index = virtue_roll_up;
-			}
-			else if(keyboard_check(vk_left)){
-				movement_direction_x = -slide_speed;
-				sprite_index = virtue_roll_left;
-			}
-			else if(keyboard_check(vk_down)){
-				movement_direction_y = slide_speed;
-				sprite_index = virtue_roll_down;
-			}
-		}
-		with(playerobject_sin){
-			movement_direction_x = 0;
-			movement_direction_y = 0;
-			is_sliding = true;
-			
-			if(keyboard_check(vk_left)){
-				movement_direction_x = slide_speed;
-				sprite_index = sin_roll_right;
-			}
-			else if(keyboard_check(vk_up)){
-				movement_direction_y = -slide_speed;
-				sprite_index = sin_roll_up;
-			}
-			else if(keyboard_check(vk_right)){
-				movement_direction_x = -slide_speed;
-				sprite_index = sin_roll_left;
-			}
-			else if(keyboard_check(vk_down)){
-				movement_direction_y = slide_speed;
-				sprite_index = sin_roll_down;
-			}
-		}
-		return;
+
+with (playerobject_virtue){
+	if(!is_sliding){
+		movement_direction_x = 0;
+		movement_direction_y = 0;
 	}
+	/*
+	if(check_idle(playerobject_virtue)){
+		set_idle(playerobject_virtue);
+		if(check_player_collision(playerobject_virtue))
+			set_idle(playerobject_sin);
+	}*/
 }
-else{
-	with (playerobject_virtue){
-		if(!is_sliding){
-			movement_direction_x = 0;
-			movement_direction_y = 0;
+with (playerobject_sin){
+	if(!is_sliding){
+		movement_direction_x = 0;
+		movement_direction_y = 0;
+	}/*
+	if(check_idle(playerobject_sin)){
+		set_idle(playerobject_sin);
+		if(check_player_collision(playerobject_sin)){
+			set_idle(playerobject_virtue);
 		}
-	}
-	with (playerobject_sin){
-		if(!is_sliding){
-			movement_direction_x = 0;
-			movement_direction_y = 0;
-		}
-	}	
+	}*/
 }
 with (playerobject_virtue){
 	x += movement_direction_x;
@@ -111,4 +71,18 @@ if(playerobject_virtue.on_goal && playerobject_sin.on_goal &&
 	instance_create_depth(x,y,-10,countdown_timer);
 	won = true;
 	countdown_timer.is_win = true;
+	
+	if(global.is_normal_mode && (HUD.normal_highscore > num_moves || HUD.normal_highscore == 0)){
+		ini_open("data.ini");
+		ini_write_real("data", "normal_highscore" + room_get_name(room), num_moves);
+		ini_close();
+	}
+	if(!global.is_normal_mode){
+		global.total_time += HUD.secs;
+		if(HUD.speedrun_highscore > HUD.secs || HUD.speedrun_highscore == 0){
+			ini_open("data.ini");
+			ini_write_real("data", "speedrun_highscore" + room_get_name(room), HUD.secs);
+			ini_close();
+		}
+	}	
 }

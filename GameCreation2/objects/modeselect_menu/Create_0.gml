@@ -5,7 +5,7 @@ while(room_exists(global.num_levels+2)){
 }
 
 em_init(
-    3,
+    2,
     0,
     32,
     ">",
@@ -27,6 +27,6 @@ if !audio_is_playing(music){
 }
 
 em_add_section("Play",0);
-em_add_section("Level Select",0);
+//em_add_section("Level Select",0);
 em_add_section("Exit",0);
 

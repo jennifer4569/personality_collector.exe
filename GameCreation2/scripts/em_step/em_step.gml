@@ -42,10 +42,44 @@ if (em_key_enter) {
 	show_debug_message(actual_string);
 	
 	//main menu stuff
-	if(em_title == "Main Menu"){
-		if(actual_string == cur + "Play") room_goto(2);
-		else if(actual_string == cur + "Level Select") room_goto(1);
+	if(em_title == "Main Menu" || em_title == "personality_\ncollector.exe"){
+		//default menu
+		if(actual_string == cur + "Play"){
+			em_destroy();
+			init_mode_select();
+		}
 		else if(actual_string == cur + "Exit") game_end();
+		
+		//mode selection menu
+		else if(actual_string == cur + "Normal Mode"){
+			em_destroy();
+			init_normal_select();
+			global.is_normal_mode = true;
+		}
+		else if(actual_string == cur + "Speedrun Mode"){
+			em_destroy();
+			init_speedrun_select();
+			global.is_normal_mode = false;
+			global.total_time = 0;
+		}
+		else if(actual_string == cur + "Back to Main Menu"){
+			em_destroy();
+			room_goto(0);
+		}
+		
+		//
+		else if(actual_string == cur + "Start Game") room_goto(2);
+		else if(actual_string == cur + "Level Select") room_goto(1);
+
+		else if(actual_string == cur + "Leaderboard") {
+			//leaderboard stuff here	
+		}
+		
+		else if(actual_string == cur + "Back"){
+			em_destroy();
+			init_mode_select();
+		}
+		
 		audio_play_sound(menu,0,false)
 	}
 	//level select stuff
@@ -73,7 +107,11 @@ if (em_key_enter) {
 			instance_destroy(pause_menu);
 			playerobject_controller.in_pause = false;
 		}
-		if(actual_string == cur + "Restart") room_restart();
+		if(actual_string == cur + "Restart"){
+			room_restart();
+			global.total_time += HUD.secs;
+			global.start_time = HUD.secs;
+		}
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		if(actual_string == cur + "Exit") game_end();
 		audio_play_sound(menu,0,false)
