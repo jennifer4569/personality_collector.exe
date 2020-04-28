@@ -113,6 +113,20 @@
             "value": "0",
             "varName": "on_goal",
             "varType": 3
+        },
+        {
+            "id": "6d648ccf-9294-4e01-9e55-b739483de7f7",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "hit_timer",
+            "varType": 0
         }
     ],
     "solid": true,
