@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "1bd0ac96-3176-4684-a71d-c6802530ef41",
+            "Value": {
+                "id": "60f42345-9e5a-451f-b80a-f9078727bf9b",
+                "resourcePath": "objects\\help\\help.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1efef63f-f418-4b96-ae61-ee9a7f5047d5",
             "Value": {
                 "id": "c61b423f-4519-49b7-aa27-def4b4cc3498",
@@ -335,6 +343,14 @@
             }
         },
         {
+            "Key": "4558dc67-2a59-4b30-af9a-86472d6f47f0",
+            "Value": {
+                "id": "14cec6dd-b675-4973-b719-36fc81b3196b",
+                "resourcePath": "objects\\story_menu\\story_menu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4640cc8b-da8f-4841-99e8-7d5697ae2879",
             "Value": {
                 "id": "defa84df-abf3-4708-9b95-8e6c4b374541",
@@ -515,6 +531,14 @@
             "Value": {
                 "id": "935dd0f4-3d6e-4fda-a5c9-79ab4e79b1e0",
                 "resourcePath": "scripts\\check_player_collision\\check_player_collision.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "659a2987-eaf5-4e23-b557-5cc2c1a48fb3",
+            "Value": {
+                "id": "6cc3d4ed-e0b1-424e-b77c-0f0ee0ce6d63",
+                "resourcePath": "scripts\\init_story\\init_story.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -724,6 +748,14 @@
                 "id": "1d471814-f52f-4aab-8a0f-4642925e492d",
                 "resourcePath": "scripts\\string_to_leaderboard\\string_to_leaderboard.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "929faafd-d367-43ae-aae7-ed4f97660de3",
+            "Value": {
+                "id": "3069bf63-d8c9-49a7-a77b-f279a9c446e7",
+                "resourcePath": "objects\\story\\story.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1346,6 +1378,7 @@
         "62828bfe-c1d7-4143-9685-351f8f01ad67",
         "e8265c44-9506-4ed2-8d5e-c76518d7d5a5",
         "6240bf4c-ab43-4d5b-b747-22f7948f97c0",
+        "659a2987-eaf5-4e23-b557-5cc2c1a48fb3",
         "03581012-99ed-49ce-970a-d4729381520a",
         "5017a295-b735-4eb5-b333-2008c43f63bc",
         "48f8bd72-1568-4b73-a8b6-273c23204e7f",

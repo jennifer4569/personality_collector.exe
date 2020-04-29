@@ -44,6 +44,7 @@ if (em_key_enter) {
 	//main menu stuff
 	if(em_title == "Main Menu" || em_title == "personality_\ncollector.exe"){
 		if(instance_exists(leaderboard)) return;
+		if(instance_exists(story_menu)) return;
 		//default menu
 		if(actual_string == cur + "Play"){
 			em_destroy();
@@ -74,6 +75,9 @@ if (em_key_enter) {
 
 		else if(actual_string == cur + "Leaderboard") {
 			instance_create_depth(0,0,-10,leaderboard);
+		}
+		else if(actual_string == cur + "Story") {
+			instance_create_depth(0,0,-10,story);
 		}
 		
 		else if(actual_string == cur + "Back"){
@@ -114,7 +118,28 @@ if (em_key_enter) {
 			global.start_time = HUD.secs;
 		}
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
+		if(actual_string == cur + "Help"){
+			if(!playerobject_controller.in_help){
+				instance_destroy(pause_menu);
+				playerobject_controller.in_pause = false;
+				playerobject_controller.in_help = true;
+				var inst = instance_create_depth(0,0,-10,help);
+				inst.index = playerobject_controller.help_index;
+				playerobject_controller.help_index++;
+				if (playerobject_controller.help_index == 2) playerobject_controller.help_index = 0;
+			}
+			else{
+				instance_destroy(help);
+				playerobject_controller.in_help = false;	
+			}
+			
+		}
 		if(actual_string == cur + "Exit") game_end();
+		audio_play_sound(menu,0,false)
+	}
+	//pause menu
+	else if(em_title == "Story"){
+		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		audio_play_sound(menu,0,false)
 	}
 }

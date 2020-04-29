@@ -5,7 +5,7 @@ while(room_exists(global.num_levels+2)){
 }
 
 em_init(
-    5,
+    2,
     0,
     32,
     ">",
@@ -14,7 +14,7 @@ em_init(
     fa_center,
     fa_top,
     c_white,
-    "Paused",
+    "Story",
     100,
     0,
     0,
@@ -23,8 +23,7 @@ em_init(
     0
 );
 
-em_add_section("Resume",0);
-em_add_section("Restart",0);
-em_add_section("Help",0);
-em_add_section("Back to Main Menu",0);
-em_add_section("Exit",0);
+em_add_section("Play",0);
+//em_add_section("Level Select",0);
+em_add_section("Main Menu",0);
+global.start_time = 0;

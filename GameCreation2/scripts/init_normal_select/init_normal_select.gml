@@ -1,5 +1,5 @@
 em_init(
-	3,
+	4,
 	0,
 	32,
 	">",
@@ -19,4 +19,5 @@ em_init(
 
 em_add_section("Start Game",0);
 em_add_section("Level Select",0);
+em_add_section("Story",0);
 em_add_section("Back",0);

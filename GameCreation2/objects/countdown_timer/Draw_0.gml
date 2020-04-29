@@ -45,7 +45,7 @@ if(is_win){
 		else if (rname == "Level16") draw_text(x,y-30,"Awesome! Acquired my\n Self-Discipline module. Starting to\n feel almost human again!");
 		else if (rname == "Level17") draw_text(x,y-30,"Awesome!...Got Optimism.\n I can’t wait to see how\n everyone else is doing!");
 		else if (rname == "Level18") draw_text(x,y-30,"Alright!...Got Energetic.\n Excited to get back!");
-		else if (rname == "Level19") draw_text(x,y-30,"Alright!...Got Gentleness.\n Soon...soon...\nLet's keep going!");
+		else if (rname == "Level19") draw_text(x,y-30,"Alright!...Got Gentleness.\n Soon...soon...\n/Keep going!");
 		else if (rname == "Level20") draw_text(x,y-30,"Success!...Got Reliability\n back. I can’t wait to be back\n to myself! Two more to go! ");
 		else if (rname == "Level21") draw_text(x,y-30,"So close! Got Consideration.\n Oh it feels so nice to feel again,\n but just one thing feels missing.");
 		else if (rname == "Level22") draw_text(x,y-30,"Success! Initiating next level...");
