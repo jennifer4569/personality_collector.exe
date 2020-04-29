@@ -85,5 +85,7 @@ if(playerobject_virtue.on_goal && playerobject_sin.on_goal &&
 			ini_close();
 		}
 		countdown_timer.countdown = 1;
+		if(room == room_last)
+			insert_to_leaderboard(global.total_time);
 	}	
 }

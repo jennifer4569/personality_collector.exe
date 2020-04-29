@@ -43,6 +43,7 @@ if (em_key_enter) {
 	
 	//main menu stuff
 	if(em_title == "Main Menu" || em_title == "personality_\ncollector.exe"){
+		if(instance_exists(leaderboard)) return;
 		//default menu
 		if(actual_string == cur + "Play"){
 			em_destroy();
@@ -72,7 +73,7 @@ if (em_key_enter) {
 		else if(actual_string == cur + "Level Select") room_goto(1);
 
 		else if(actual_string == cur + "Leaderboard") {
-			//leaderboard stuff here	
+			instance_create_depth(0,0,-10,leaderboard);
 		}
 		
 		else if(actual_string == cur + "Back"){
