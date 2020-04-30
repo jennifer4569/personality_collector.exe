@@ -114,8 +114,10 @@ if (em_key_enter) {
 		}
 		if(actual_string == cur + "Restart"){
 			room_restart();
-			global.total_time += HUD.secs;
-			global.start_time = HUD.secs;
+			if (!global.is_normal_mode){
+				global.total_time += HUD.secs;
+				global.start_time = HUD.secs;
+			}
 		}
 		if(actual_string == cur + "Back to Main Menu") room_goto(0);
 		if(actual_string == cur + "Help"){
