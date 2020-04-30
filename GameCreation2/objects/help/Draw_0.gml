@@ -22,7 +22,7 @@ else if (rname == "Level16") moves = 22;
 else if (rname == "Level17") moves = 17;
 else if (rname == "Level18") moves = 14;
 else if (rname == "Level19") moves = 10;
-else if (rname == "Level20") moves = 36;
+else if (rname == "Level20") moves = 32;
 else if (rname == "Level21") moves = 12;
 else if (rname == "Level22") moves = 17;
 
