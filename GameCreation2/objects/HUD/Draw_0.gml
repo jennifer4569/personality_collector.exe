@@ -24,7 +24,7 @@ else{
 	draw_text(right_x-30,up_y+30, ms_to_string(secs));
 
 	draw_text(right_x-30,up_y+90,"Total Time:");
-	if(playerobject_controller.won || playerobject_controller.in_pause || playerobject_controller.lost)
+	if(playerobject_controller.won || playerobject_controller.lost)
 		draw_text(right_x-30,up_y+120,ms_to_string(global.total_time));
 	else
 		draw_text(right_x-30,up_y+120,ms_to_string(global.total_time + secs));

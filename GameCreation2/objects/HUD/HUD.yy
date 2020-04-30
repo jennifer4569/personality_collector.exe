@@ -135,6 +135,20 @@
             "value": "0",
             "varName": "speedrun_highscore",
             "varType": 0
+        },
+        {
+            "id": "027cf88b-3813-4a98-bc93-1113308b9ed7",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "secs",
+            "varType": 0
         }
     ],
     "solid": false,
