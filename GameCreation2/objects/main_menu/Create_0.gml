@@ -13,7 +13,7 @@ em_init(
     room_height/2,
     fa_center,
     fa_top,
-    c_white,
+    c_white,//c_yellow,//c_white,
     "personality_\ncollector.exe",
     100,
     0,

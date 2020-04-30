@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+//draw_set_colour(make_color_rgb(212, 255, 107));
 draw_set_font(font1);
 draw_text(x,up_y, room_get_name(room));
 
